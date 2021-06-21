@@ -67,7 +67,7 @@ public class Array {
         int index = 0;
         for(int i=0; i<r; i++){
             for(int j=0; j<r; j++){
-
+                //循环进行赋值
             }
         }
         return null;
