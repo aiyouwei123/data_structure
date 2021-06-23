@@ -1,4 +1,4 @@
-package com.wjl.day01;
+package com.wjl.arraystudy;
 
 /**
  * 数组是一种连续存储的线性结构，元素类型相同，大小相等，数组是多维的，通过使用整型索引值来访问他们的元素，数组的尺寸不能变
@@ -12,9 +12,10 @@ package com.wjl.day01;
  *      5. 插入删除元素的效率很低
  */
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Array {
+public class ArrayStudy {
     /**
      *
      * 习题：
@@ -23,7 +24,7 @@ public class Array {
      * 思路：先将数组中的所有非零数据提取，依次放到数组的前列，等到赋值完成后，再将数组的后几列赋值为0
      * @param arr
      */
-    public static void moveZeroes(int[] arr){
+    public  void moveZeroes(int[] arr){
         int index = 0;
         for(int num : arr){
             if(num !=0){
@@ -61,19 +62,24 @@ public class Array {
         // 如果两个数组的数据个数不相等，无法进行转换
         if(m * n != r * c ){
             return arr;
-        }
-        // 定义需要转换的数组
-        int[][] reshapedNums = new int[r][c];
-        int index = 0;
-        for(int i=0; i<r; i++){
-            for(int j=0; j<r; j++){
-                //循环进行赋值
+        }else {
+            //
+            int[][] reshapedNums = new int[r][c];
+            ArrayList<Integer> numbers = new ArrayList<>();
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    //循环进行赋值
+                    numbers.add(arr[i][j]);
+                }
             }
+            int index = 0;
+            for (int i = 0; i < reshapedNums.length; i++) {
+                for (int j = 0; j < reshapedNums[i].length; j++) {
+                    reshapedNums[i][j] = numbers.get(index++);
+                }
+            }
+            return reshapedNums;
         }
-        return null;
     }
-    public static void main(String[] args) {
-        int[] arr = {0, 1, 0, 3, 12};
-        moveZeroes(arr);
-    }
+
 }
