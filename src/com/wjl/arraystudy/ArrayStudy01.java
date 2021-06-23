@@ -15,7 +15,7 @@ package com.wjl.arraystudy;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class ArrayStudy {
+public class ArrayStudy01 {
     /**
      *
      * ϰ�⣺
