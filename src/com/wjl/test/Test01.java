@@ -44,8 +44,16 @@ public class Test01 {
         System.out.println(4.1>=4);
         System.out.println(1+2+"3");
     }
+    @Test
+    public void test6() {
+     /*   double a = 0.2;
+        double b = 0.4;
+        boolean result = doubleTest(a,b);
+        System.out.println(result);*/
+        forTest();
+    }
 
-    public static void main(String[] args) {
+    public void intTest(){
         System.out.print("请输入三个整数：");
         Scanner scanner = new Scanner(System.in);
         int i = scanner.nextInt();
@@ -58,5 +66,45 @@ public class Test01 {
         }
     }
 
+    public boolean doubleTest(double a,double b){
+        if(0.0<a && a<1.0 && 0.0<b && b <1.0){
+            return true;
+        }
+        return false;
+    }
 
+    public void forTest(){
+        int f = 0;
+        int g = 1;
+        for(int i =0;i<=15 ;i++){
+            System.out.println(f); // 0 1 1 2 3 5 8 13 21 34 55
+            f = f+g; // 1 1 2 3 5 8 13 21 34 55 89
+            g = f-g; // 0 1 1 2 3 5 8 13 21 34 55
+        }
+    }
+
+    public static void main(String[] args) {
+        double t = 9.0;
+        while(Math.abs(t - 9.0/t)>.001){
+            t = (9.0/t + t) / 2.0;
+        }
+        System.out.printf("%.5f\n",t);
+
+        int sum = 0;
+        for(int i = 1; i< 1000; i ++){
+            for(int j = 0 ; j < i; j++){
+                sum ++;
+            }
+        }
+        System.out.println(sum); //
+
+
+        int sum2 = 0;
+        for(int i = 1; i<1000 ; i*=2){ // 1 2 4 8 16 32 64 128 256 512
+            for(int j = 1 ; j <1000; j++){
+                sum2 ++;
+            }
+        }
+        System.out.println(sum2);  // 10 * 999
+    }
 }
